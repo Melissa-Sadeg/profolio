@@ -1,0 +1,364 @@
+:root {
+  /* define colors */
+  --bg-main-color: #222831;
+
+  --fs-h-large: 48px;
+  --fs-h-medium: 32px;
+  --fs-body-1: 20px;
+
+  /* paddings and margins */
+  --desktop-padding-inline: 12rem;
+  --desktop-padding-block: 5rem;
+}
+
+h1,
+h2,
+h3,
+p,
+div,
+img,
+span,
+button,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 80%;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-main-color);
+  display: grid;
+  grid-template-columns: 40% 60%;
+  column-gap: 5rem;
+  grid-template-rows: auto;
+  height: 100vh;
+  margin-inline: min(12rem, 10%);
+  margin-block: 5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* body > * {
+  border: 1px solid wheat;
+} */
+
+.text-white {
+  color: white;
+}
+
+.text-secondary {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.header-large {
+  font-size: var(--fs-h-large);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.header-medium {
+  font-size: var(--fs-h-medium);
+  font-weight: 600;
+}
+
+.body-text-1 {
+  font-size: var(--fs-body-1);
+  font-weight: 500;
+}
+
+/* sections */
+
+header {
+  position: fixed;
+  width: calc(40% - 5rem);
+}
+
+.header-text {
+  margin-right: 2rem;
+}
+
+.header-text > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+/* navigation */
+nav {
+  margin-top: 3rem;
+}
+
+nav > ul {
+  padding: 0;
+}
+
+nav > ul > li {
+  list-style: none;
+  position: relative;
+  width: fit-content;
+}
+
+nav > ul > li:hover::before,
+.active::before {
+  width: 6rem;
+}
+
+nav > ul > li::before {
+  content: "";
+  height: 4px;
+  width: 2rem;
+  background-color: orange;
+  position: absolute;
+  bottom: -4px;
+  transition: width 0.2s ease-in-out;
+}
+
+nav > ul > li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+nav > ul > li > a {
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.active > a,
+nav > ul > li:hover a {
+  color: white;
+}
+
+/* navigation ends */
+
+header .links {
+  position: fixed;
+  bottom: 5rem;
+}
+header .links > *:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.links i {
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.3s ease-in-out;
+}
+
+.links i:hover {
+  color: white;
+}
+
+#cv {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  color: var(--bg-main-color);
+  font-size: 20px;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#cv:hover {
+  background-color: white;
+}
+
+.scroll-section {
+  grid-column: 2;
+  /* border: 1px solid white; */
+  padding-right: 8rem;
+
+  transition: all 0.4s ease-in-out;
+}
+
+.scroll-section > *:not(:last-child) {
+  margin-bottom: 4rem;
+}
+
+.scroll-section p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.scroll-section a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+.scroll-section a:hover {
+  color: orange;
+}
+
+#a-propos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+#a-propos > button {
+  background-color: transparent;
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#a-propos > button:hover {
+  background-color: orange;
+  border-color: orange;
+}
+
+#a-propos > button:hover a {
+  color: white;
+}
+
+.projet {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-bottom: 2px solid white;
+}
+
+.projet > .img-container {
+  height: 18rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.projet .img-container > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.projet .img-container > img:hover {
+  top: -180%;
+  transition: top 4s;
+}
+
+.projet > .techniques {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.projet > .techniques > button {
+  color: rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  padding: 5px 10px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+}
+
+.projet .projet-link {
+  display: flex;
+  gap: 2rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-bottom: 2px solid white;
+  padding-bottom: 2rem;
+}
+
+#contact > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+#contact > ul > li {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (width <= 1220px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  header {
+    position: relative;
+    width: 100%;
+    padding-right: 2rem;
+  }
+
+  header nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  header h1 {
+    font-size: 32px;
+  }
+
+  header .links {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: flex-start;
+    right: 2rem;
+    top: 15rem;
+    gap: 1rem;
+  }
+}
+
+@media (width <= 700px) {
+  body {
+    margin-inline: 2rem;
+    margin-top: 3rem;
+  }
+
+  header {
+    padding: 0;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  header .links {
+    position: initial;
+    margin-top: 1rem;
+    flex-direction: row;
+    align-items: center;
+    height: min-content;
+    gap: 0;
+  }
+
+  .scroll-section {
+    padding: 0;
+  }
+}
